@@ -1,0 +1,23 @@
+[package]
+name = "tele-soulja"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+structopt = "0.3"
+futures = "0.3"
+grammers-client = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-crypto = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-mtproto = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-mtsender = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-session = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-tl-gen = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-tl-parser = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+grammers-tl-types = { git = "https://github.com/Lonami/grammers.git", branch = "master" }
+log = "0.4"
+simple_logger = "2.1"
+tokio = { version = "1.17", features = ["full"] }
+tempfile = "3.3"
