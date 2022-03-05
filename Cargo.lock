@@ -942,6 +942,7 @@ dependencies = [
  "grammers-tl-parser",
  "grammers-tl-types",
  "log",
+ "rand",
  "simple_logger",
  "structopt",
  "tempfile",

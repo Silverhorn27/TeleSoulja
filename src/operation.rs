@@ -1,5 +1,6 @@
 use crate::{client::Client, utils::load_channel_id_or_links};
 use anyhow::Result;
+use rand::Rng;
 use std::path::PathBuf;
 use structopt::{clap::ArgGroup, StructOpt};
 
@@ -7,14 +8,21 @@ use structopt::{clap::ArgGroup, StructOpt};
 pub enum Operation {
     #[structopt(group = ArgGroup::with_name("from").required(true))]
     Report {
+        /// Custom message for reporting
         #[structopt(short = "m", long)]
         message: Option<String>,
 
+        /// List of channels
         #[structopt(long, group = "from")]
         channels: Vec<String>,
 
+        /// File path to channels
         #[structopt(long, group = "from")]
         file: Option<PathBuf>,
+
+        /// Timeout after each report
+        #[structopt(long, default_value = "10")]
+        timeout: u64,
     },
 }
 
@@ -25,6 +33,7 @@ impl Operation {
                 message,
                 channels,
                 file,
+                timeout,
             } => {
                 let channels = if let Some(file) = file {
                     load_channel_id_or_links(&file)?
@@ -37,7 +46,7 @@ impl Operation {
                     if client.report_channel(&channel, message.clone()).await? {
                         println!("channel: {}, reported: {}", channel, message);
                     }
-                    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+                    tokio::time::sleep(std::time::Duration::from_secs(*timeout)).await;
                 }
             }
         }
@@ -47,5 +56,8 @@ impl Operation {
 
 fn random_message() -> String {
     let messages = vec!["Фейки и дезинформация о войне"];
-    messages[0].clone().to_string()
+    let mut rng = rand::thread_rng();
+    let idx = rng.gen_range(0..messages.len());
+
+    messages[idx].clone().to_string()
 }

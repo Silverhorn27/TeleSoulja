@@ -7,7 +7,6 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0"
-structopt = "0.3"
 futures = "0.3"
 grammers-client = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
 grammers-crypto = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
@@ -18,6 +17,8 @@ grammers-tl-gen = { git = "https://github.com/Lonami/grammers.git", branch = "ma
 grammers-tl-parser = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
 grammers-tl-types = { git = "https://github.com/Lonami/grammers.git", branch = "master" }
 log = "0.4"
+rand = "0.8"
 simple_logger = "2.1"
-tokio = { version = "1.17", features = ["full"] }
+structopt = "0.3"
 tempfile = "3.3"
+tokio = { version = "1.17", features = ["full"] }
