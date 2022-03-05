@@ -13,12 +13,11 @@ grammers-crypto = { git = "https://github.com/Lonami/grammers.git", branch = "ma
 grammers-mtproto = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
 grammers-mtsender = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
 grammers-session = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
-grammers-tl-gen = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
-grammers-tl-parser = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+# grammers-tl-gen = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
+# grammers-tl-parser = { git = "https://github.com/Lonami/grammers.git", branch = "master" } 
 grammers-tl-types = { git = "https://github.com/Lonami/grammers.git", branch = "master" }
 log = "0.4"
 rand = "0.8"
 simple_logger = "2.1"
 structopt = "0.3"
-tempfile = "3.3"
 tokio = { version = "1.17", features = ["full"] }

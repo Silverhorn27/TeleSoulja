@@ -55,7 +55,26 @@ impl Operation {
 }
 
 fn random_message() -> String {
-    let messages = vec!["Фейки и дезинформация о войне"];
+    let messages = vec![
+        "Содержит российскую пропаганду",
+        "Военная пропаганда",
+        "Пропаганда насилия",
+        "Фейки и дезинформация о войне",
+        "Дезинформация окупантов",
+        "Расжигание ненависти",
+        "Расжигание вражды",
+        "Разжигание межнациональной розни",
+        "Российсикие фейки",
+        "Diversionary activity of Russian terrorism in Ukraine",
+        "Russian occupants channel",
+        "Fakes and dissinformation",
+        "Content againts human rights",
+        "СМИ подконтрольные окупантам",
+        "Пророссийские и антизападные СМИ",
+        "Антизападные СМИ",
+        "Распостранение дезинформации",
+    ];
+
     let mut rng = rand::thread_rng();
     let idx = rng.gen_range(0..messages.len());
 
